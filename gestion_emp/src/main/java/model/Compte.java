@@ -3,6 +3,7 @@ package model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "compte")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "poste")
 public class Compte {
@@ -10,20 +11,34 @@ public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Integer id;
-	protected String login;
+	protected String nom;
+	protected String prenom;
 	protected String password;
 	protected String mail;
+	@OneToOne
+	protected Service service;
 	
 	
 	public Compte() {
 	}
 	
 	
-	public Compte(String login, String password, String mail) {
-		this.login = login;
+
+	public Compte(String nom, String prenom, String password, String mail) {
+		this.nom = nom;
+		this.prenom = prenom;
 		this.password = password;
 		this.mail = mail;
 	}
+
+	public Compte(String nom, String prenom, String password, String mail, Service service) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+		this.mail = mail;
+		this.service = service;
+	}
+
 
 
 	public Integer getId() {
@@ -36,28 +51,63 @@ public class Compte {
 	}
 
 
-	public String getLogin() {
-		return login;
+	public String getNom() {
+		return nom;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
 	public String getPassword() {
 		return password;
 	}
+
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 	public String getMail() {
 		return mail;
 	}
+
+
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+
+
+	public Service getService() {
+		return service;
+	}
+
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", login=" + login + ", password=" + password + ", mail=" + mail + "]";
+		return "Compte [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", password=" + password + ", mail=" + mail
+				+ ", service=" + service + "]";
 	}
+	
+	
 	
 	
 	

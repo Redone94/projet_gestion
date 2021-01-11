@@ -7,10 +7,12 @@ import dao.IDAOCompte;
 import dao.IDAOConge;
 import dao.IDAOEmploye;
 import dao.IDAOManager;
+import dao.IDAOService;
 import dao.jpa.DAOCompte;
 import dao.jpa.DAOConge;
 import dao.jpa.DAOEmploye;
 import dao.jpa.DAOManager;
+import dao.jpa.DAOService;
 
 
 
@@ -24,8 +26,15 @@ public class Context {
 	private IDAOEmploye daoEmploye=new DAOEmploye();
 	private IDAOManager daoManager=new DAOManager();
 	private IDAOConge daoConge=new DAOConge();
+	private IDAOService daoService=new DAOService();
 	
 	
+	public IDAOService getDaoService() {
+		return daoService;
+	}
+	public void setDaoService(IDAOService daoService) {
+		this.daoService = daoService;
+	}
 	public Context() {
 		super();
 	}
