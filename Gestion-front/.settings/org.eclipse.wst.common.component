@@ -19,10 +19,13 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="Gestion-back-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Gestion-back/Gestion-back">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
                                 
         
         
-        <property name="java-output-path" value="/gestion_front/target/classes"/>
+        <property name="java-output-path" value="/Gestion-front/target/classes"/>
         <property name="context-root" value="Gestion-front"/>
                             
     
