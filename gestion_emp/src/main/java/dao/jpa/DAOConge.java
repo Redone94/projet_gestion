@@ -8,7 +8,6 @@ import javax.persistence.Query;
 
 import Config.Context;
 import dao.IDAOConge;
-import dao.IDAOManager;
 import model.Conge;
 import model.Manager;
 

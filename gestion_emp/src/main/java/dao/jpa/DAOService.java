@@ -17,7 +17,7 @@ public class DAOService implements IDAOService{
 		EntityManager em=Context.getInstance().getEmf().createEntityManager();
 		em.getTransaction().begin();
 		try{t=em.merge(t);}
-		catch(Exception e) {System.out.println("Error save Service");}
+		catch(Exception e) {e.printStackTrace();System.out.println("Error save Service");}
 		em.getTransaction().commit();
 		em.close();
 		return t;

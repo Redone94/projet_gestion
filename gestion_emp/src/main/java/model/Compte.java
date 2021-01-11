@@ -15,8 +15,7 @@ public class Compte {
 	protected String prenom;
 	protected String password;
 	protected String mail;
-	@OneToOne
-	protected Service service;
+	
 	
 	
 	public Compte() {
@@ -30,16 +29,6 @@ public class Compte {
 		this.password = password;
 		this.mail = mail;
 	}
-
-	public Compte(String nom, String prenom, String password, String mail, Service service) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.password = password;
-		this.mail = mail;
-		this.service = service;
-	}
-
-
 
 	public Integer getId() {
 		return id;
@@ -91,20 +80,13 @@ public class Compte {
 	}
 
 
-	public Service getService() {
-		return service;
-	}
 
-
-	public void setService(Service service) {
-		this.service = service;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Compte [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", password=" + password + ", mail=" + mail
-				+ ", service=" + service + "]";
+				+ "]";
 	}
 	
 	

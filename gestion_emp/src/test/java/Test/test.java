@@ -77,9 +77,10 @@ public class test {
 	public static void main(String[] args) {
 		
 		Service service= new Service("FR234");
-		Employe employe= new Employe("red","mad","123","red@gmail.com");
+		service=Context.getInstance().getDaoService().save(service);
+		Employe employe= new Employe("red","mad","123","red@gmail.com",service);
 		Context.getInstance().getDaoCompte().save(employe);
-		Context.getInstance().getDaoService().save(service);
+		
 		
 
 		

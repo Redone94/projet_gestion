@@ -6,12 +6,12 @@ import javax.persistence.Persistence;
 import dao.IDAOCompte;
 import dao.IDAOConge;
 import dao.IDAOEmploye;
-import dao.IDAOManager;
+//import dao.IDAOManager;
 import dao.IDAOService;
 import dao.jpa.DAOCompte;
 import dao.jpa.DAOConge;
 import dao.jpa.DAOEmploye;
-import dao.jpa.DAOManager;
+//import dao.jpa.DAOManager;
 import dao.jpa.DAOService;
 
 
@@ -20,11 +20,11 @@ import dao.jpa.DAOService;
 
 public class Context {
 	private static Context _instance;
+	
 	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestion");
 	
 	private IDAOCompte daoCompte=new DAOCompte();
 	private IDAOEmploye daoEmploye=new DAOEmploye();
-	private IDAOManager daoManager=new DAOManager();
 	private IDAOConge daoConge=new DAOConge();
 	private IDAOService daoService=new DAOService();
 	
@@ -67,17 +67,15 @@ public class Context {
 	public void setDaoEmploye(IDAOEmploye daoEmploye) {
 		this.daoEmploye = daoEmploye;
 	}
-	public IDAOManager getDaoManager() {
-		return daoManager;
-	}
-	public void setDaoManager(IDAOManager daoManager) {
-		this.daoManager = daoManager;
-	}
+
 	public IDAOConge getDaoConge() {
 		return daoConge;
 	}
 	public void setDaoConge(IDAOConge daoConge) {
 		this.daoConge = daoConge;
 	}
-	
+	public void closeEmf() 
+	{
+		emf.close();
+	}
 }

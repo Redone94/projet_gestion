@@ -8,9 +8,12 @@ import javax.persistence.*;
 @DiscriminatorValue("employe")
 public class Employe extends Compte {
 	
-	@OneToMany(mappedBy = "employe",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	
+	@OneToMany(mappedBy = "employe")
 	private List<Conge> conge;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_s")
+	protected Service service;
 
 	public Employe() {
 	}
@@ -23,6 +26,12 @@ public class Employe extends Compte {
 		super(nom, prenom, password, mail);
 		this.conge=conge;
 	}
+	public Employe(String nom,String prenom,String mail,String password, Service service) {
+		
+		super(nom, prenom, password, mail);
+		this.service=service;
+	}
+	
 	
 	public List<Conge> getConge() {
 		return conge;

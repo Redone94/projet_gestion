@@ -5,22 +5,27 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "conge")
 public class Conge {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Enumerated(EnumType.STRING)
 	private TypeC typec;
-	@Column(name = "Date de la demande")
-	private LocalDate demande;
-	@Column(name = "Date de début")
+	
+	@Column(name = "Date_demande",columnDefinition = "DATE")
+	private LocalDate demande=LocalDate.now();
+	
+	@Column(name = "Date_début",columnDefinition = "DATE")
 	private LocalDate debut;
-	@Column(name = "Date de fin")
+	
+	@Column(name = "Date_fin",columnDefinition = "DATE")
 	private LocalDate fin;
-	@Column(name = "Nombre des jours")
+	
+	@Column(name = "Nbr_jours")
 	private double nbr_jours;
+	
 	private String motif;
 	private String statut;
 	@ManyToOne
@@ -31,7 +36,6 @@ public class Conge {
 	
 	
 	public Conge() {
-		super();
 	}
 
 
