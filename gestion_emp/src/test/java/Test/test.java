@@ -1,12 +1,18 @@
 package Test;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import Config.Context;
 import model.Compte;
+import model.Conge;
 import model.Employe;
 import model.Manager;
 import model.Service;
+import model.TypeC;
 
 public class test {
 
@@ -75,11 +81,19 @@ public class test {
 		}
 	}
 	public static void main(String[] args) {
-		
+		Scanner sc = new Scanner(System.in);
+        System.out.println("Choisir une marque :");
+        System.out.println(Arrays.toString(TypeC.values()));
+        String typec = sc.nextLine();
+        TypeC t=TypeC.valueOf(typec);
+        
+		List<Conge> conge=new ArrayList();
 		Service service= new Service("FR234");
 		service=Context.getInstance().getDaoService().save(service);
-		Employe employe= new Employe("red","mad","123","red@gmail.com",service);
-		Context.getInstance().getDaoCompte().save(employe);
+		Employe employe= new Employe("red","mad","123","red@gmail.com",service,conge);
+		employe=Context.getInstance().getDaoEmploye().save(employe);
+		Conge c1= new Conge(t,LocalDate.parse("2021-06-15"),LocalDate.parse("2021-06-20"),"mariage",employe);
+		Context.getInstance().getDaoConge().save(c1);
 		
 		
 

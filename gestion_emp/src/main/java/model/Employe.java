@@ -17,6 +17,12 @@ public class Employe extends Compte {
 
 	public Employe() {
 	}
+
+	public Employe(String nom,String prenom,String mail,String password, Service service,List<Conge> conge) {
+		super(nom, prenom, password, mail);
+		this.conge = conge;
+		this.service = service;
+	}
 	public Employe(String nom,String prenom,String mail,String password) {
 		
 		super(nom, prenom, password, mail);
@@ -31,7 +37,6 @@ public class Employe extends Compte {
 		super(nom, prenom, password, mail);
 		this.service=service;
 	}
-	
 	
 	public List<Conge> getConge() {
 		return conge;

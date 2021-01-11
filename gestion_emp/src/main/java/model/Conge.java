@@ -39,6 +39,14 @@ public class Conge {
 	}
 
 
+	public Conge(TypeC typec, LocalDate debut, LocalDate fin, String motif) {
+		this.typec = typec;
+		this.debut = debut;
+		this.fin = fin;
+		this.motif = motif;
+	}
+
+
 	public Conge(TypeC typec, LocalDate debut, LocalDate fin, String motif, Employe employe) {
 		this.typec = typec;
 		this.debut = debut;
