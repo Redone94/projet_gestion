@@ -107,8 +107,8 @@
                  <td>${c.demande}</td>
                  <td>${c.debut}</td>
                  <td>${c.fin}</td>
-                 <td>${c.nbr_jours}</td>
                  <td>${c.motif}</td>
+                 <td>${c.nbr_jours}</td>                 
                  <td>${c.statut}</td>
                  <td>${c.employe.id}</td>
                  
@@ -128,6 +128,7 @@
 
     <label for="update_Statut">Statut : Refusé</label>
     <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="text" type="text" placeholder="Saisir votre commentaire"><br>
+  	<input class ="btn btn-warning" type="submit" name="valider" value="valider">
   </form>
 </div>
 
