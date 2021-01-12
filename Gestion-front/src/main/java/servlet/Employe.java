@@ -23,7 +23,7 @@ public class Employe extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {}
-		Employe emp=(Employe) request.getSession().getAttribute("e");
+		Employe emp=(Employe) request.getSession().getAttribute("compte");
 		response.sendRedirect("employe");
 	}
 

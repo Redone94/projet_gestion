@@ -7,5 +7,6 @@ import model.Conge;
 public interface IDAOConge extends IDAO<Conge,Integer> {
 	
 	public List<Conge> FindByEmpId(Integer id);
+	public List<Conge> FindByMId(Integer id);
 
 }

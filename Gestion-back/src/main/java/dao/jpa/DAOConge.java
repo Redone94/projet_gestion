@@ -63,6 +63,23 @@ public class DAOConge implements IDAOConge {
 		try 
 		{
 			Query query= em.createQuery("SELECT c from Conge c LEFT JOIN c.employe e where e.user=:id",Conge.class);
+			query.setParameter("id", id);
+			conges=query.getResultList();
+		}
+		catch(Exception e){System.out.println("Error findAll Conge");}
+		em.close();
+		return conges;
+	}
+
+	@Override
+	public List<Conge> FindByMId(Integer id) {
+		List<Conge> conges = new ArrayList();
+		EntityManager em=Context.getInstance().getEmf().createEntityManager();
+		try 
+		{
+			Query query= em.createQuery("SELECT c from Conge c JOIN c.employe e where e.id_manager=:id",Conge.class);
+			query.setParameter("id", id);
+
 			conges=query.getResultList();
 		}
 		catch(Exception e){System.out.println("Error findAll Conge");}

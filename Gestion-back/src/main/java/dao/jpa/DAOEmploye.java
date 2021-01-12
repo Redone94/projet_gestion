@@ -83,9 +83,11 @@ public class DAOEmploye implements IDAOEmploye{
 		try 
 		{
 			Query maRequete = em.createQuery("from Employe e where e.id_manager=:id_manager",Employe.class);
+			maRequete.setParameter("id_manager",id_manager);
+
 			return maRequete.getResultList();
 		}
-		catch(Exception e){System.out.println("Error findAlFilter Employe");}
+		catch(Exception e){System.out.println("Error findbyidmanager Employe");}
 		em.close();
 		return employes;
 	}

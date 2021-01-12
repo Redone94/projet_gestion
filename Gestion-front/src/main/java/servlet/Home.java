@@ -26,7 +26,7 @@ public class Home extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {}
-
+		
 		
 		String mail=request.getParameter("mail");
 		String password=request.getParameter("password");
@@ -34,13 +34,13 @@ public class Home extends HttpServlet {
 		System.out.println("test");
 
 		if(c instanceof Manager) {
-			System.out.println("emp");
-
+			System.out.println("man");
+			request.getSession().setAttribute("compte", c);
 			response.sendRedirect("manager");
 		}else if(c instanceof Employe) {
 			System.out.println("emp");
 			this.getServletContext().getRequestDispatcher("/WEB-INF/employe.jsp").forward(request, response);
-//			request.getSession().setAttribute("e", c);
+			request.getSession().setAttribute("compte", c);
 //			response.sendRedirect("employe");
 
 		}else {

@@ -68,7 +68,7 @@ public class Employe extends Compte {
 
 	@Override
 	public String toString() {
-		return "Employe [conge=" + conge + ", id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", password="
+		return "Employe [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", password="
 				+ password + ", mail=" + mail + ", service=" + service + "]";
 	} 
 	

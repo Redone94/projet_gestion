@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
       <a class="nav-link active" id="pills-emp-tab" data-toggle="pill" href="#pills-emp" role="tab" aria-controls="pills-emp" aria-selected="true">Gestion employés</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " id="pills-ordi-tab" data-toggle="pill" href="#pills-ordi" role="tab" aria-controls="pills-ordi" aria-selected="false">Gestion Congés</a>
+      <a class="nav-link " id="pills-conge-tab" data-toggle="pill" href="#pills-conge" role="tab" aria-controls="pills-conge" aria-selected="false">Gestion Congés</a>
     </li>
   </ul>
   
@@ -69,7 +70,7 @@
                  <td>${e.nom}</td>
                  <td>${e.prenom}</td>
                  <td>${e.mail}</td>
-                 <td>${e.id_s}</td>
+                 <td>${e.service.id}</td>
                </tr>
 				</c:forEach>
          
@@ -109,7 +110,7 @@
                  <td>${c.nbr_jours}</td>
                  <td>${c.motif}</td>
                  <td>${c.statut}</td>
-                 <td>${c.e.id}</td>
+                 <td>${c.employe.id}</td>
                  
                  
             <td>

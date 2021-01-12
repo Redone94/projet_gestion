@@ -22,16 +22,19 @@ public class Manager extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {}
-		Compte m=(Compte) request.getSession().getAttribute("e");
+		Compte m=(Compte) request.getSession().getAttribute("compte");
 		Integer id_manager=m.getId();
 		List<Employe> e =Context.getInstance().getDaoEmploye().findByIdM(id_manager);
-		List<Conge> c=Context.getInstance().getDaoConge().findAll();
-		int id_emp=Integer.parseInt(request.getParameter("id_emp"));
-		List<Conge> cemp=Context.getInstance().getDaoConge().FindByEmpId(id_emp);
+		List<Conge> c=Context.getInstance().getDaoConge().FindByMId(id_manager);
+//		int id_emp=Integer.parseInt(request.getParameter("id_emp"));
+//		List<Conge> cemp=Context.getInstance().getDaoConge().FindByEmpId(id_emp);
+//		*
 		
-		request.setAttribute("employes", e);
+		System.out.println(e);
+		System.out.println(c);
+		request.setAttribute("employe", e);
 		request.setAttribute("conge", c);
-		request.setAttribute("cong_emp", cemp);
+		//request.setAttribute("cong_emp", cemp);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/manager.jsp").forward(request, response);
 
 		
