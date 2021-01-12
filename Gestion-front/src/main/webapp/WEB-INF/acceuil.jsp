@@ -1,25 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<!-- importer le fichier de style -->
 <link rel="stylesheet" href="css/style.css">
-<title>Insert title here</title>
-</head>
-<body>
-<div id="container">
-		<!-- zone de connexion -->
-		<div>
-			<h1>Se connecter</h1>
-		</div>
-		<form action="home" method="POST">
-
-			<label><b>Mail</b></label> <input type="email" placeholder="Entrer votre Login" name="login" required> 
-			<label><b>Mot de passe</b></label> <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-			<input type="submit" id='submit' value='LOGIN'>
-		</form>
-	</div>
-</body>
-</html>
+<div class="logo">
+  <img title="ajc classroom" class="img-responsive" id="header-logo" src="http://188.165.51.107/web/css/themes/cool_blue/images/header-logo-custom1.png" alt="AJC FORMATION">
+</div>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <p class="title"> Connectez-vous </p>
+      <input type="email" placeholder="Adresse email"/>
+      <input type="password" placeholder="Mot de passe"/>
+      <button class="button">Connexion </button>
+    </form>
+  </div>
+</div>

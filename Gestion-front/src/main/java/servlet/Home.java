@@ -15,7 +15,9 @@ import model.Manager;
 public class Home extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/acceuil.jsp").forward(request, response);
+		
 	}
 
 
@@ -29,13 +31,20 @@ public class Home extends HttpServlet {
 		String mail=request.getParameter("mail");
 		String password=request.getParameter("password");
 		Compte c=Context.getInstance().getDaoCompte().connect(mail, password);
+		System.out.println("test");
+
 		if(c instanceof Manager) {
+			System.out.println("emp");
+
 			response.sendRedirect("manager");
 		}else if(c instanceof Employe) {
-			request.getSession().setAttribute("e", c);
-			response.sendRedirect("employe");
+			System.out.println("emp");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/employe.jsp").forward(request, response);
+//			request.getSession().setAttribute("e", c);
+//			response.sendRedirect("employe");
 
 		}else {
+			System.out.println("ELSE");
 			doGet(request, response);
 		}
 		
