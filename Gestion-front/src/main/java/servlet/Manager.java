@@ -34,6 +34,8 @@ public class Manager extends HttpServlet {
 		System.out.println(c);
 		request.setAttribute("employe", e);
 		request.setAttribute("conge", c);
+		request.setAttribute("m", m);
+
 		//request.setAttribute("cong_emp", cemp);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/manager.jsp").forward(request, response);
 

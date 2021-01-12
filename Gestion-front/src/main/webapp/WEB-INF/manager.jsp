@@ -28,11 +28,11 @@
 <table class="en-tete">
 	<tr>
 		<td colspan="2">Nom :</td>
-		<td>${manager.nom}</td>
+		<td>${m.nom}</td>
 	</tr>
 	<tr>
 		<td colspan="2">Prenom :</td>
-		<td>${manager.prenom}</td>
+		<td>${m.prenom}</td>
 	</tr>
 	</table>
 <div id="content">
