@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/conge")
-public class Conge extends HttpServlet {
+public class ServletConge extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
  

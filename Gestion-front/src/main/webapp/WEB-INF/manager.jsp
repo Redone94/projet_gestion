@@ -93,6 +93,7 @@
             <th>Date-fin</th>            
             <th>motif</th>
             <th>Nbr_jours</th>
+            <th>statut</th>
             <th>TypeC</th>
             <th>Employe</th>
             <th>Actions</th>
@@ -110,23 +111,25 @@
                  <td>${c.motif}</td>
                  <td>${c.nbr_jours}</td>                 
                  <td>${c.statut}</td>
+                 <td>${c.typec}</td>
                  <td>${c.employe.id}</td>
+                 <td>${c.commentaire}</td>
                  
                  
             <td>
               <input onclick="AccepterD()" type="button" class ="btn btn-warning" value="Accepter">            
-              <input onclick="RefuserD()" type="button" class ="btn btn-danger" value="Refuser">
+              <input onclick="RefuserD(${c.id},'${c.commentaire}','${c.statut}')" type="button" class ="btn btn-danger" value="Refuser">
             </td>
           </tr>
            </c:forEach>
         </tbody>
       </table>
       
-<div id="Refuser">
+<div id="Refuser" >
   <h3>Modifier l'état du congé</h3>
-  <form action="conge" method="post">
-
-    <label for="update_Statut">Statut : Refusé</label>
+  <form action="manager" method="post" style="display: inline-flex;">
+	<input type="hidden" id="id_c" name="id_c" value="${c.id}">
+    <label id="add_statut" for="update_Statut">Statut : Refusé</label>
     <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="text" type="text" placeholder="Saisir votre commentaire"><br>
   	<input class ="btn btn-warning" type="submit" name="valider" value="valider">
   </form>
@@ -143,10 +146,12 @@ function AccepterD(){
 	statut="Accepté";
 	update_statut=statut;
 }
-function RefuserD(commentaire){
+function RefuserD(id,commentaire,statut){
 	Refuser.style.display="block";
-	statut="Refusé";
+	add_statut.value="Refusé";
 	add_commentaire.value=commentaire;
+	id_c.value=id;
+	
 }
 
 </script>

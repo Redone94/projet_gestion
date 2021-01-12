@@ -39,9 +39,9 @@ public class Home extends HttpServlet {
 			response.sendRedirect("manager");
 		}else if(c instanceof Employe) {
 			System.out.println("emp");
-			this.getServletContext().getRequestDispatcher("/WEB-INF/employe.jsp").forward(request, response);
+			//this.getServletContext().getRequestDispatcher("/WEB-INF/employe.jsp").forward(request, response);
 			request.getSession().setAttribute("compte", c);
-//			response.sendRedirect("employe");
+			response.sendRedirect("employe");
 
 		}else {
 			System.out.println("ELSE");

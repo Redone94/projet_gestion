@@ -121,7 +121,14 @@ body {
   font-size: 20px;
   font-family: emoji;
 }
-#Refuser
-{
-  display:none;
+#bV{
+	background-color : green;
+	display : inline-block;
+	width : 45%;
+}
+#bA{
+	background-color : red;
+	display : inline-block;
+	margin-left : 8%;
+	width : 45%;
 }

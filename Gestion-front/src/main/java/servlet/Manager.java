@@ -42,8 +42,18 @@ public class Manager extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {}	
+		String statut=request.getParameter("statut");
+		String commentaire=request.getParameter("commentaire");
+		
+		Integer id=Integer.parseInt(request.getParameter("id_c"));
+		Conge c =Context.getInstance().getDaoConge().findById(id);
+		c.setCommentaire(commentaire);
+		c.setStatut(statut);
+		Context.getInstance().getDaoConge().save(c);
+		response.sendRedirect("manager");		
+		}
 
 }
