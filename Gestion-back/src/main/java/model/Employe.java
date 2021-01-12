@@ -41,6 +41,15 @@ public class Employe extends Compte {
 		this.id_manager=id_manager;
 	}
 	
+	
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
 	public List<Conge> getConge() {
 		return conge;
 	}

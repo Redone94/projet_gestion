@@ -76,4 +76,18 @@ public class DAOEmploye implements IDAOEmploye{
 		return employes;
 	}
 
+	@Override
+	public List<Employe> findByIdM(Integer id_manager) {
+		List<Employe> employes = new ArrayList();
+		EntityManager em=Context.getInstance().getEmf().createEntityManager();
+		try 
+		{
+			Query maRequete = em.createQuery("from Employe e where e.id_manager=:id_manager",Employe.class);
+			return maRequete.getResultList();
+		}
+		catch(Exception e){System.out.println("Error findAlFilter Employe");}
+		em.close();
+		return employes;
+	}
+
 }

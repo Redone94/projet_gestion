@@ -121,3 +121,7 @@ body {
   font-size: 20px;
   font-family: emoji;
 }
+#Refuser
+{
+  display:none;
+}

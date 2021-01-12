@@ -28,6 +28,7 @@ public class Conge {
 	
 	private String motif;
 	private String statut;
+	private String commentaire;
 	@ManyToOne
 	private Employe employe;
 	
@@ -110,12 +111,26 @@ public class Conge {
 	public void setEmploye(Employe employe) {
 		this.employe = employe;
 	}
+	
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Conge [id=" + id + ", typec=" + typec + ", demande=" + demande + ", debut=" + debut + ", fin=" + fin
-				+ ", nbr_jours=" + nbr_jours + ", motif=" + motif + ", statut=" + statut + ", employe=" + employe + "]";
+				+ ", nbr_jours=" + nbr_jours + ", motif=" + motif + ", statut=" + statut + ", commentaire="
+				+ commentaire + ", employe=" + employe + "]";
 	}
-	
+
+
+
 	
 	
 }
