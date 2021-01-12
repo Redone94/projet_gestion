@@ -15,23 +15,11 @@ public class Compte {
 	protected String prenom;
 	protected String password;
 	protected String mail;
-	protected Integer id_manager;
 	
 	
 	public Compte() {
 	}
 	
-	
-
-	public Compte(String nom, String prenom, String password, String mail, Integer id_manager) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.password = password;
-		this.mail = mail;
-		this.id_manager = id_manager;
-	}
-
 
 
 	public Compte(String nom, String prenom, String password, String mail) {
@@ -90,19 +78,6 @@ public class Compte {
 		this.mail = mail;
 	}
 
-
-
-
-
-	public Integer getId_manager() {
-		return id_manager;
-	}
-
-
-
-	public void setId_manager(Integer id_manager) {
-		this.id_manager = id_manager;
-	}
 
 
 

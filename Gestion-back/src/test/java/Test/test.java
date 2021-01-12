@@ -81,23 +81,26 @@ public class test {
 		}
 	}
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-        System.out.println("Choisir une marque :");
-        System.out.println(Arrays.toString(TypeC.values()));
-        String typec = sc.nextLine();
-        TypeC t=TypeC.valueOf(typec);
-        
-		List<Conge> conge=new ArrayList();
-		Service service= new Service("FR234");
-		service=Context.getInstance().getDaoService().save(service);
-		Employe employe= new Employe("red","mad","123","red@gmail.com",service,conge);
-		employe=Context.getInstance().getDaoEmploye().save(employe);
-		Conge c1= new Conge(t,LocalDate.parse("2021-06-15"),LocalDate.parse("2021-06-20"),"mariage",employe);
-		Context.getInstance().getDaoConge().save(c1);
+//		Scanner sc = new Scanner(System.in);
+//        System.out.println("Choisir une marque :");
+//        System.out.println(Arrays.toString(TypeC.values()));
+//        String typec = sc.nextLine();
+//        TypeC t=TypeC.valueOf(typec);
+//        
+//		List<Conge> conge=new ArrayList();
+//		Service service= new Service("FR234");
+//		service=Context.getInstance().getDaoService().save(service);
+//		Manager manager= new Manager("re","ma","123","re@gmail.com");
+//		Context.getInstance().getDaoCompte().save(manager);
+//		Employe employe= new Employe("red","mad","123","red@gmail.com",service,conge);
+//		employe.setId_manager(1);
+//		employe=Context.getInstance().getDaoEmploye().save(employe);
+//		Conge c1= new Conge(t,LocalDate.parse("2021-06-15"),LocalDate.parse("2021-06-20"),"mariage",employe);
+//		Context.getInstance().getDaoConge().save(c1);
 		//red
 		
 		
-
+		menuPrincipal();
 		
 	}
 

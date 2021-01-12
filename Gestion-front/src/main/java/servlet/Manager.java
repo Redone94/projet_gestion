@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Config.Context;
 import model.Employe;
+import model.Conge;
 
 public class Manager extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,6 +21,14 @@ public class Manager extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {}
 		List<Employe> e =Context.getInstance().getDaoEmploye().findAll();
+		List<Conge> c=Context.getInstance().getDaoConge().findAll();
+		int id_emp=Integer.parseInt(request.getParameter("id_emp"));
+		List<Conge> cemp=Context.getInstance().getDaoConge().FindByEmpId(id_emp);
+		//String statut=
+		
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/manager.jsp").forward(request, response);
+
 		
 	}
 

@@ -11,7 +11,7 @@ import Config.Context;
 import model.Compte;
 import model.Employe;
 import model.Manager;
-@WebServlet(name = "/home")
+@WebServlet("/home")
 public class Home extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class Home extends HttpServlet {
 		String password=request.getParameter("password");
 		Compte c=Context.getInstance().getDaoCompte().connect(mail, password);
 		if(c instanceof Manager) {
-			response.sendRedirect("admin");
+			response.sendRedirect("manager");
 		}else if(c instanceof Employe) {
 			request.getSession().setAttribute("e", c);
 			response.sendRedirect("employe");
