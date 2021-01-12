@@ -128,7 +128,7 @@
 <div id="Refuser" >
   <h3>Modifier l'état du congé</h3>
   <form action="manager" method="post" style="display: inline-flex;">
-	<input type="hidden" id="id_c" name="id_c" value="${c.id}">
+	<input type="hidden" id="id_c" name="id_c" value="${conge[0].id}">
     <label id="add_statut" for="update_Statut">Statut : Refusé</label>
     <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="text" type="text" placeholder="Saisir votre commentaire"><br>
   	<input class ="btn btn-warning" type="submit" name="valider" value="valider">

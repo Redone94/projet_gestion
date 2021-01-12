@@ -38,8 +38,10 @@ public class DAOConge implements IDAOConge {
 
 	@Override
 	public Conge findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager em=Context.getInstance().getEmf().createEntityManager();
+		Conge a = em.find(Conge.class, id);
+		em.close();
+		return a;
 	}
 
 	@Override
