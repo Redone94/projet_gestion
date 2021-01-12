@@ -130,6 +130,7 @@
   <form action="manager" method="post" style="display: inline-flex;">
 	<input type="hidden" id="id_c" name="id_c" value="${conge[0].id}">
     <label id="add_statut" for="update_Statut">Statut : Refusé</label>
+    <input type="hidden" id="add_statut" name="statut" value="Refusé">
     <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="text" type="text" placeholder="Saisir votre commentaire"><br>
   	<input class ="btn btn-warning" type="submit" name="valider" value="valider">
   </form>
@@ -148,7 +149,7 @@ function AccepterD(){
 }
 function RefuserD(id,commentaire,statut){
 	Refuser.style.display="block";
-	add_statut.value="Refusé";
+	//add_statut.value="Refusé";
 	add_commentaire.value=commentaire;
 	id_c.value=id;
 	
