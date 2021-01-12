@@ -96,6 +96,7 @@
             <th>statut</th>
             <th>TypeC</th>
             <th>Employe</th>
+            <th>Commentaire</th>
             <th>Actions</th>
             </tr>
         </thead>
@@ -131,7 +132,7 @@
 	<input type="hidden" id="id_c" name="id_c" value="${conge[0].id}">
     <label id="add_statut" for="update_Statut">Statut : Refusé</label>
     <input type="hidden" id="add_statut" name="statut" value="Refusé">
-    <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="text" type="text" placeholder="Saisir votre commentaire"><br>
+    <label for="add_commentair">Commentaire :</label> <input required id="add_commentaire" name="commentaire" type="text" placeholder="Saisir votre commentaire"><br>
   	<input class ="btn btn-warning" type="submit" name="valider" value="valider">
   </form>
 </div>
